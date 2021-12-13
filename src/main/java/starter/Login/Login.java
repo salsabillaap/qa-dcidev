@@ -16,13 +16,7 @@ public class Login {
         requestpayload.put("Email",email);
         requestpayload.put("Password",password);
     }
-    //set body request
-    public void setBodyRequest(){
-        SerenityRest
-                .given()
-                .body(requestpayload.toString());
-    }
-    //set header
+    //set header dan body
     public void setHeader(String header, String content){
         SerenityRest
                 .given()
@@ -43,7 +37,6 @@ public class Login {
                 .then()
                 .statusCode(statuscode);
     }
-
 
     //VALIDASI JSONSCHEMA
     public void JsonschemaEndpointLoginSuccess(){
