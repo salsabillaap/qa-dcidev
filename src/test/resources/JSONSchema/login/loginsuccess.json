@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "Code": 200,
+      "Message": "Login Success",
+      "Data": {
+        "ID": 1,
+        "Name": "Admin",
+        "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.emV2MzgxOeyJhdXRob3JpTUwMDksInVzZXJJZCI6MX0kIjp0cnVlLCJleHAiOjE.aDGmCTqYbV7hJ02lOpoQ0gso_gffYqClvhaNZZdbe7F",
+        "Role": "admin"
+      }
+    }
+  ],
+  "required": [
+    "Code",
+    "Message",
+    "Data"
+  ],
+  "properties": {
+    "Code": {
+      "$id": "#/properties/Code",
+      "type": "integer",
+      "title": "The Code schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        200
+      ]
+    },
+    "Message": {
+      "$id": "#/properties/Message",
+      "type": "string",
+      "title": "The Message schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Login Success"
+      ]
+    },
+    "Data": {
+      "$id": "#/properties/Data",
+      "type": "object",
+      "title": "The Data schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "ID": 1,
+          "Name": "Admin",
+          "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.emV2MzgxOeyJhdXRob3JpTUwMDksInVzZXJJZCI6MX0kIjp0cnVlLCJleHAiOjE.aDGmCTqYbV7hJ02lOpoQ0gso_gffYqClvhaNZZdbe7F",
+          "Role": "admin"
+        }
+      ],
+      "required": [
+        "ID",
+        "Name",
+        "Token",
+        "Role"
+      ],
+      "properties": {
+        "ID": {
+          "$id": "#/properties/Data/properties/ID",
+          "type": "integer",
+          "title": "The ID schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            1
+          ]
+        },
+        "Name": {
+          "$id": "#/properties/Data/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Admin"
+          ]
+        },
+        "Token": {
+          "$id": "#/properties/Data/properties/Token",
+          "type": "string",
+          "title": "The Token schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.emV2MzgxOeyJhdXRob3JpTUwMDksInVzZXJJZCI6MX0kIjp0cnVlLCJleHAiOjE.aDGmCTqYbV7hJ02lOpoQ0gso_gffYqClvhaNZZdbe7F"
+          ]
+        },
+        "Role": {
+          "$id": "#/properties/Data/properties/Role",
+          "type": "string",
+          "title": "The Role schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "admin"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
