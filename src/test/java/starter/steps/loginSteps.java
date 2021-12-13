@@ -19,8 +19,8 @@ public class loginSteps extends BaseTest {
         login.setHeader(header,content);
     }
 
-    @When("I am hit endpoint")
-    public void iAmHitEndpoint() {
+    @When("I am hit endpoint login")
+    public void iAmHitEndpointLogin() {
         login.hitEndpointLogin();
     }
 
@@ -38,4 +38,6 @@ public class loginSteps extends BaseTest {
     public void validResponseFailed() {
         login.JsonschemaEndpointLoginFailed();
     }
+
+
 }
