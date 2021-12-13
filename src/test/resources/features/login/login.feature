@@ -8,7 +8,7 @@ Feature: Login Functionality
   Scenario Outline: Check response and status code with valid body request
     Given I am set body request email "<email>" and password "<password>"
     And I am set valid header "Content-Type" with fill "application/json"
-    When I am hit endpoint
+    When I am hit endpoint login
     Then I am get a status code 200
     And valid response success
     Examples:
@@ -20,7 +20,7 @@ Feature: Login Functionality
   Scenario Outline: Check response and status code with invalid email body request
     Given I am set body request email "<email>" and password "<password>"
     And I am set valid header "Content-Type" with fill "application/json"
-    When I am hit endpoint
+    When I am hit endpoint login
     Then I am get a status code 400
     And valid response failed
     Examples:
@@ -34,7 +34,7 @@ Feature: Login Functionality
   Scenario Outline: Check response and status code with invalid password body request
     Given I am set body request email "<email>" and password "<password>"
     And I am set valid header "Content-Type" with fill "application/json"
-    When I am hit endpoint
+    When I am hit endpoint login
     Then I am get a status code 400
     And valid response failed
     Examples:
@@ -47,7 +47,7 @@ Feature: Login Functionality
   Scenario Outline: Check response and status code with invalid email and password body request
     Given I am set body request email "<email>" and password "<password>"
     And I am set valid header "Content-Type" with fill "application/json"
-    When I am hit endpoint
+    When I am hit endpoint login
     Then I am get a status code 400
     And valid response failed
     Examples:
@@ -57,11 +57,11 @@ Feature: Login Functionality
       | userexamplecom  | gda      |
       | @example.com    | zkzkz    |
 
-  #Failed #Test_5
+  @nyoba #Failed #Test_5
   Scenario Outline: Check response and status code with valid body request and without header
     Given I am set body request email "<email>" and password "<password>"
-    And I am set valid header "" with fill ""
-    When I am hit endpoint
+    #And I am set valid header "" with fill ""
+    When I am hit endpoint login
     Then I am get a status code 400
     And valid response failed
     Examples:
@@ -73,6 +73,6 @@ Feature: Login Functionality
   Scenario: Check response and status code without body request
     Given I am set body request email "" and password ""
     And I am set valid header "Content-Type" with fill "application/json"
-    When I am hit endpoint
+    When I am hit endpoint login
     Then I am get a status code 400
     And valid response failed
