@@ -3,17 +3,24 @@ package starter.Login;
 import net.serenitybdd.rest.SerenityRest;
 import org.json.simple.JSONObject;
 import starter.BaseEndpoint.BaseEndpoint;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class Login {
     BaseEndpoint endpoint = new BaseEndpoint();
 
     JSONObject requestpayload;
 
-    //set request payload/body request
-    public void setBodyRequest(String email, String password){
+    //define request payload
+    public void setRequestPayload(String email, String password){
         requestpayload = new JSONObject();
         requestpayload.put("Email",email);
         requestpayload.put("Password",password);
+    }
+    //set body request
+    public void setBodyRequest(){
+        SerenityRest
+                .given()
+                .body(requestpayload.toString());
     }
     //set header
     public void setHeader(String header, String content){
@@ -21,19 +28,33 @@ public class Login {
                 .given()
                 .header(header,content)
                 .body(requestpayload.toString());
+
     }
     //click endpoint
-    public void hitEndpointAuthentication(){
+    public void hitEndpointLogin(){
         SerenityRest
                 .when()
                     .post(endpoint.Login);
 
     }
     //validasi response status code
-    public void validateEndpointAuthentication(int statuscode){
+    public void validateEndpointLogin(int statuscode){
         SerenityRest
                 .then()
                 .statusCode(statuscode);
+    }
+
+
+    //VALIDASI JSONSCHEMA
+    public void JsonschemaEndpointLoginSuccess(){
+        SerenityRest
+                .then()
+                .body(matchesJsonSchemaInClasspath("JSONSchema/login/loginsuccess.json"));
+    }
+    public void JsonschemaEndpointLoginFailed(){
+        SerenityRest
+                .then()
+                .body(matchesJsonSchemaInClasspath("JSONSchema/login/loginfailed.json"));
     }
 
 }
