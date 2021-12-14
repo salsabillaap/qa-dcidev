@@ -4,6 +4,7 @@ import net.serenitybdd.rest.SerenityRest;
 import org.json.simple.JSONObject;
 import starter.BaseEndpoint.BaseEndpoint;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.hamcrest.Matchers.*;
 
 public class Signup {
     BaseEndpoint endpoint = new BaseEndpoint();
@@ -24,6 +25,7 @@ public class Signup {
                 .given()
                 .header(header,content)
                 .body(requestpayload.toString());
+
     }
 
     public void hitEndpointSignup(){
@@ -38,5 +40,18 @@ public class Signup {
                 .statusCode(statuscode);
     }
 
+    //VALIDASI JSONSCHEMA
+    public void JsonschemaEndpointSignupSuccess(){
+        SerenityRest
+                .then()
+                .body(matchesJsonSchemaInClasspath("JSONSchema/signup/signupsuccess.json"))
+                .body("Message",equalTo("Success Operation"));
+    }
 
+    public void JsonschemaEndpointSignupFailed(String message){
+        SerenityRest
+                .then()
+                .body(matchesJsonSchemaInClasspath("JSONSchema/signup/signupfailed.json"))
+                .body("Message",equalTo(message));
+    }
 }

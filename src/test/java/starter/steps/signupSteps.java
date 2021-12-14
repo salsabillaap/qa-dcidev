@@ -31,24 +31,9 @@ public class signupSteps extends BaseTest {
     public void validateResponseSuccessSignup() {
     }
 
-    @And("validate error message Email or Telephone Number Already Exist")
-    public void validateErrorMessageEmailOrTelephoneNumberAlreadyExist() {
-
+    @And("validate error message {string}")
+    public void validateErrorMessage(String message) {
+        signup.JsonschemaEndpointSignupFailed(message);
     }
 
-    @And("validate error message Password must consist of six characters or more")
-    public void validateErrorMessagePasswordMustConsistOfSixCharactersOrMore() {
-    }
-
-    @And("validate error message Invalid Name")
-    public void validateErrorMessageInvalidName() {
-    }
-
-    @And("validate error message Invalid Email")
-    public void validateErrorMessageInvalidEmail() {
-    }
-
-    @And("validate error message Invalid Password")
-    public void validateErrorMessageInvalidPassword() {
-    }
 }
