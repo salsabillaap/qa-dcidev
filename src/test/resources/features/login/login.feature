@@ -12,9 +12,10 @@ Feature: Login Functionality
     Then I am get a status code 200
     And valid response success
     Examples:
-      | email            | password |
-      | user@example.com | user123  |
-      | admin@admin.com  | admin123 |
+      | email              | password |
+      | user@example.com   | user123  |
+      | admin@admin.com    | admin123 |
+      | testing1@gmail.com | testing1 |
 
   @LoginFailed #Failed #Test_2
   Scenario Outline: Check response and status code with invalid email body request
