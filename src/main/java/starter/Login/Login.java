@@ -22,7 +22,6 @@ public class Login {
                 .given()
                 .header(header,content)
                 .body(requestpayload.toString());
-
     }
     //click endpoint
     public void hitEndpointLogin(){

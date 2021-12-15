@@ -4,4 +4,6 @@ public class BaseEndpoint {
     public String BASEURL = "https://barengin.site";
     public String Login = BASEURL+"/login";
     public String Signup = BASEURL+"/signup";
+    public String Product = BASEURL+"/jwt/products";
+    public String GetProductId = BASEURL+"/products/";
 }

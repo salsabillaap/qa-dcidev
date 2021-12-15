@@ -60,6 +60,17 @@ Feature: Signup Functionality
       | testing15 | testing15@gmail.com | testing15 | +628515346597 |
 
   @TC_6
+  Scenario Outline: Check response and status code with invalid name body request
+    Given I am set body request for signup name "<name>" email "<email>" password "<password>" phone "<phone>"
+    And I am set valid header for signup "Content-Type" with fill "application/json"
+    When I am hit endpoint signup
+    Then I am get a status code 400 signup
+    And validate response success signup
+    Examples:
+      | name   | email               | password  | phone         |
+      | $%@#76 | testing17@gmail.com | testing15 | +628515347654 |
+
+  @TC_7
   Scenario Outline: Check response and status code with password less than 6 caracter body request
     Given I am set body request for signup name "<name>" email "<email>" password "<password>" phone "<phone>"
     And I am set valid header for signup "Content-Type" with fill "application/json"
@@ -70,7 +81,7 @@ Feature: Signup Functionality
       | name     | email              | password | phone          |
       | testing6 | testing6@gmail.com | test     | +6285187563298 |
 
-  @TC_7
+  @TC_8
   Scenario Outline: Check response and status code with empty name body request
     Given I am set body request for signup name "<name>" email "<email>" password "<password>" phone "<phone>"
     And I am set valid header for signup "Content-Type" with fill "application/json"
@@ -81,7 +92,7 @@ Feature: Signup Functionality
       | name | email              | password | phone         |
       |      | testing7@gmail.com | testing7 | +628565739274 |
 
-  @TC_8
+  @TC_9
   Scenario Outline: Check response and status code with empty email body request
     Given I am set body request for signup name "<name>" email "<email>" password "<password>" phone "<phone>"
     And I am set valid header for signup "Content-Type" with fill "application/json"
@@ -92,7 +103,7 @@ Feature: Signup Functionality
       | name     | email | password | phone          |
       | testing8 |       | testing8 | +6285165494765 |
 
-  @TC_9
+  @TC_10
   Scenario Outline: Check response and status code with empty password body request
     Given I am set body request for signup name "<name>" email "<email>" password "<password>" phone "<phone>"
     And I am set valid header for signup "Content-Type" with fill "application/json"
@@ -103,7 +114,7 @@ Feature: Signup Functionality
       | name     | email              | password | phone           |
       | testing9 | testing9@gmail.com |          | +62851532469458 |
 
-  @TC_10
+  @TC_11
   Scenario Outline: Check response and status code with empty phone number body request
     Given I am set body request for signup name "<name>" email "<email>" password "<password>" phone "<phone>"
     And I am set valid header for signup "Content-Type" with fill "application/json"
@@ -114,7 +125,7 @@ Feature: Signup Functionality
       | name      | email               | password  | phone |
       | testing10 | testing10@gmail.com | testing10 |       |
 
-  @TC_11
+  @TC_12
   Scenario Outline: Check response and status code with invalid phone number body request
     Given I am set body request for signup name "<name>" email "<email>" password "<password>" phone "<phone>"
     And I am set valid header for signup "Content-Type" with fill "application/json"
@@ -125,7 +136,7 @@ Feature: Signup Functionality
       | name      | email               | password  | phone        |
       | testing11 | testing11@gmail.com | testing11 | 085155007862 |
 
-  @TC_12
+  @TC_13
   Scenario Outline: Check response and status code with valid body request and without header
     Given I am set body request for signup name "<name>" email "<email>" password "<password>" phone "<phone>"
     And I am set valid header for signup "" with fill ""
@@ -142,3 +153,4 @@ Feature: Signup Functionality
   #testing11 testing11@gmail.com testing11  +628517846946 registered
   #testing14 testing14@gmail.com testing14 +628515439487413 registered
   #testing15 testing15@gmail.com testing15 +628515346597 registered
+  #$%@#76 testing17@gmail.com testing15 +628515347654 registered

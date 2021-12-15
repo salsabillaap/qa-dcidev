@@ -29,6 +29,7 @@ public class signupSteps extends BaseTest {
 
     @And("validate response success signup")
     public void validateResponseSuccessSignup() {
+        signup.JsonschemaEndpointSignupSuccess();
     }
 
     @And("validate error message {string}")
