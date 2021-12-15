@@ -65,10 +65,10 @@ Feature: Signup Functionality
     And I am set valid header for signup "Content-Type" with fill "application/json"
     When I am hit endpoint signup
     Then I am get a status code 400 signup
-    And validate response success signup
+    And validate error message "Invalid Name"
     Examples:
-      | name   | email               | password  | phone         |
-      | $%@#76 | testing17@gmail.com | testing15 | +628515347654 |
+      | name | email              | password  | phone          |
+      |      | testing0@gmail.com | testing15 | +6285153407654 |
 
   @TC_7
   Scenario Outline: Check response and status code with password less than 6 caracter body request
