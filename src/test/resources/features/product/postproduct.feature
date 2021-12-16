@@ -4,7 +4,7 @@ Feature: POST create product for admin
   I want to create product
   So that i am success create product
 
-  @TC_1
+  @TC_1 #Success
   Scenario Outline: user admin want create product
     Given I am logged in as user admin
     And I am set body request "<name_product>" "<detail_product>" price 20000 limit 5
@@ -15,7 +15,7 @@ Feature: POST create product for admin
       | name_product | detail_product |
       | Turbo VPN    | lorem ipsum    |
 
-  @TC_2
+  @TC_2 #Failed
   Scenario Outline: user customer want create product
     Given I am logged in as user customer
     And I am set body request "<name_product>" "<detail_product>" price 20000 limit 5
