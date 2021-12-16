@@ -15,8 +15,7 @@ Feature: GET product
   Scenario: I want to see all product with invalid endpoint
     Given I am set header "Content-Type" with value "applicaton/json"
     When I am hit invalid endpoint get all product
-    Then I am get a status code 400 for get all product
-    And validate response body failed code 400 message "Data Not Found" for get all product
+    Then I am get a status code 404 for get all product
 
   @TC_8 #SUCCESS
   Scenario: I want to see details product by id
