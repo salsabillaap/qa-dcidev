@@ -6,19 +6,21 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class getproductSteps {
-    @Given("I want to see detail product by id")
-    public void iWantToSeeDetailProductById() {
+
+    @Given("I am set header {string} with value {string}")
+    public void iAmSetHeaderWithValue(String arg0, String arg1) {
     }
 
-    @When("I am hit endpoint product method get")
-    public void iAmHitEndpointProductMethodGet() {
+    @When("I am hit endpoint get all product")
+    public void iAmHitEndpointGetAllProduct() {
     }
 
-    @Then("I am get a status code {int} get product")
-    public void iAmGetAStatusCodeGetProduct(int statuscode) {
+    @Then("I am get a status code {int} for get all product")
+    public void iAmGetAStatusCodeForGetAllProduct(int arg0) {
     }
 
-    @And("validate response success product by id")
-    public void validateResponseSuccessProductById() {
+    @And("validate response success get all product")
+    public void validateResponseSuccessGetAllProduct() {
     }
+
 }

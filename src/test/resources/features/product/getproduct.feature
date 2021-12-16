@@ -3,8 +3,10 @@ Feature: GET product
   fafa
   fdsaf
 
-  Scenario: Check response and status code by id
-    Given I want to see detail product by id
-    When I am hit endpoint product method get by id 5
-    Then I am get a status code 200 get product
-    And validate response success product by id
+  Scenario: I want to see list all product
+    Given I am set header "Content-Type" with value "applicaton/json"
+    When I am hit endpoint get all product
+    Then I am get a status code 200 for get all product
+    And validate response success get all product
+
+  Scenario:
