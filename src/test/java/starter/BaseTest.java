@@ -3,6 +3,7 @@ package starter;
 import starter.Login.Login;
 import starter.Product.GetProduct;
 import starter.Product.PostProduct;
+import starter.Product.PutProduct;
 import starter.Signup.Signup;
 
 public class BaseTest {
@@ -10,4 +11,5 @@ public class BaseTest {
     public Signup signup = new Signup();
     public PostProduct postproducts = new PostProduct();
     public GetProduct getproduct = new GetProduct();
+    public PutProduct putproduct = new PutProduct();
 }
