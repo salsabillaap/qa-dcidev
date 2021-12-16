@@ -130,16 +130,4 @@ public class PostProduct {
                 .body("Message",equalTo(message));
     }
 
-    // GET BOOK By ID
-    public void hitEndpointGetBook(){
-        SerenityRest
-                .given()
-                .header("Content-Type","application/json")
-                .when()
-                .get(endpoint.GetProductId+10)
-                .then()
-                .statusCode(200);
-    }
-
-
 }
