@@ -5,9 +5,6 @@
     "Code": {
       "type": "integer"
     },
-    "Message": {
-      "type": "string"
-    },
     "Data": {
       "type": "array",
       "items": [
@@ -17,10 +14,10 @@
             "ID": {
               "type": "integer"
             },
-            "NameProduct": {
+            "Name_Product": {
               "type": "string"
             },
-            "DetailProduct": {
+            "Detail_Product": {
               "type": "string"
             },
             "Price": {
@@ -38,8 +35,8 @@
           },
           "required": [
             "ID",
-            "NameProduct",
-            "DetailProduct",
+            "Name_Product",
+            "Detail_Product",
             "Price",
             "Limit",
             "Photo",
@@ -47,11 +44,14 @@
           ]
         }
       ]
+    },
+    "Message": {
+      "type": "string"
     }
   },
   "required": [
     "Code",
-    "Message",
-    "Data"
+    "Data",
+    "Message"
   ]
 }

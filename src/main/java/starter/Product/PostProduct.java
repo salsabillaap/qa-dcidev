@@ -11,7 +11,7 @@ public class PostProduct {
     BaseEndpoint endpoint = new BaseEndpoint();
     JSONObject requestpayload;
 
-    String token;
+    public String token;
 
     // hit endpoint untuk login sebagai user admin
     public void HitEndpointLoginAdmin(){

@@ -5,19 +5,16 @@
     "Code": {
       "type": "integer"
     },
-    "Message": {
-      "type": "string"
-    },
     "Data": {
       "type": "object",
       "properties": {
         "ID": {
           "type": "integer"
         },
-        "NameProduct": {
+        "Name_Product": {
           "type": "string"
         },
-        "DetailProduct": {
+        "Detail_Product": {
           "type": "string"
         },
         "Price": {
@@ -35,19 +32,22 @@
       },
       "required": [
         "ID",
-        "NameProduct",
-        "DetailProduct",
+        "Name_Product",
+        "Detail_Product",
         "Price",
         "Limit",
         "Photo",
         "Url"
       ]
+    },
+    "Message": {
+      "type": "string"
     }
   },
   "required": [
     "Code",
-    "Message",
-    "Data"
+    "Data",
+    "Message"
   ],
   "additionalProperties": false
 }
