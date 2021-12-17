@@ -44,12 +44,26 @@ public class getusersSteps extends BaseTest {
     public void iAmHitEndpointGetUserById(int id) {
         getusers.HitEndpointGetUsersByID(id);
     }
+    //HIT ENDPOINT INVALID ID
+    @When("I am hit endpoint get user by id {string}")
+    public void iAmHitEndpointGetUserById(String invaliId) {
+        getusers.HitEndpointGetUsersByInvalidID(invaliId);
+    }
+
     @Then("I am get a status code {int} for get users by id")
     public void iAmGetAStatusCodeForGetUsersById(int statuscode) {
         getusers.validateStatusCodeEndpoint(statuscode);
     }
+
     @And("validate response body code {int} message {string} for get users by id {int}")
     public void validateResponseBodyCodeMessageForGetUsersById(int code, String message, int id) {
         getusers.jsonschemaEndpointGetUsersByIDSuccess(code,message,id);
     }
+
+    @And("validate response body code {int} message {string} for get users by id")
+    public void validateResponseBodyCodeMessageForGetUsersById(int code, String message) {
+        getusers.jsonschemaEndpointGetUsersByIDFailed(code,message);
+    }
+
+
 }

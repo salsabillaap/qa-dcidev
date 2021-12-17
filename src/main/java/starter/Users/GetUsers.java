@@ -63,18 +63,30 @@ public class GetUsers {
     public void HitEndpointGetUsersByID(int id){
         SerenityRest
                 .given()
-                .header("Content","application/json")
+                .header("Content-Type","application/json")
                 .header("Authorization","Bearer "+token)
                 .when()
                 .get(endpoint.GetUsersID+id);
 
     }
+    //hit endpoint get users by invalid id
+    public void HitEndpointGetUsersByInvalidID(String invalidId){
+        SerenityRest
+                .given()
+                .header("Content-Type","application/json")
+                .header("Authorization","Bearer "+token)
+                .when()
+                .get(endpoint.GetUsersID+invalidId);
+    }
+
+    //validate status code endpoint
     public void validateStatusCodeEndpoint(int statuscode){
         SerenityRest
                 .then()
                 .statusCode(statuscode);
     }
 
+    //VALIDATE JSONSCHEMA GET ALL USERS
     public void jsonschemaEnpointGetAllUsersSuccess(int code, String message){
         SerenityRest
                 .then()
@@ -83,19 +95,29 @@ public class GetUsers {
                 .body("Message",equalTo(message));
     }
 
-    public void jsonschemaEndpointGetUsersByIDSuccess(int code, String message, int id){
-        SerenityRest
-                .then()
-                .body(matchesJsonSchemaInClasspath("JSONSchema/users/get/getusersbyidsuccess.json"))
-                .body("Code",equalTo(code))
-                .body("Code",equalTo(id))
-                .body("Message",equalTo(message));
-    }
 
     public void jsonschemaEndpointGetAllUsersFailed(int code, String message){
         SerenityRest
                 .then()
                 .body(matchesJsonSchemaInClasspath("JSONSchema/users/get/getallusersfailed.json"))
+                .body("Code",equalTo(code))
+                .body("Message",equalTo(message));
+    }
+
+    //VALIDATE JSONSCHEMA GET USERS BY ID
+    public void jsonschemaEndpointGetUsersByIDSuccess(int code, String message, int id){
+        SerenityRest
+                .then()
+                .body(matchesJsonSchemaInClasspath("JSONSchema/users/get/getusersbyidsuccess.json"))
+                .body("Code",equalTo(code))
+                .body("Data.ID",equalTo(id))
+                .body("Message",equalTo(message));
+    }
+
+    public void jsonschemaEndpointGetUsersByIDFailed(int code, String message){
+        SerenityRest
+                .then()
+                .body(matchesJsonSchemaInClasspath("JSONSchema/users/get/getusersbyidfailed.json"))
                 .body("Code",equalTo(code))
                 .body("Message",equalTo(message));
     }
