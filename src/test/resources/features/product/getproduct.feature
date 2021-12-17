@@ -11,7 +11,7 @@ Feature: GET all product and by ID
     Then I am get a status code 200 for get all product
     And validate response body code 200 message "Success Operation" for get all product
 
-  @TC_7 #FAILED #tanyakan ke BE mengenai kondisi data not found dan bad request
+  @TC_7 #FAILED
   Scenario: I want to see all product with invalid endpoint
     Given I am set header "Content-Type" with value "applicaton/json"
     When I am hit invalid endpoint get all product
