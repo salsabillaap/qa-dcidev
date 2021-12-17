@@ -6,6 +6,7 @@ import starter.Product.GetProduct;
 import starter.Product.PostProduct;
 import starter.Product.PutProduct;
 import starter.Signup.Signup;
+import starter.Users.GetUsers;
 
 public class BaseTest {
     public Login login = new Login();
@@ -14,4 +15,5 @@ public class BaseTest {
     public GetProduct getproduct = new GetProduct();
     public PutProduct putproduct = new PutProduct();
     public DeleteProduct deleteproduct = new DeleteProduct();
+    public GetUsers getusers = new GetUsers();
 }
