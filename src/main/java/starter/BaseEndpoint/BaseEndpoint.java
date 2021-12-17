@@ -10,4 +10,5 @@ public class BaseEndpoint {
     public String PutProduct = BASEURL+"/jwt/products/";
     public String DeleteProduct = BASEURL+"/jwt/products/";
     public String GetAllUsers = BASEURL+"/jwt/users";
+    public String GetUsersID = BASEURL+"/jwt/users/";
 }

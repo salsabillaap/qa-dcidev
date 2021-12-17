@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "Code": {
+      "type": "integer"
+    },
+    "Data": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "Phone": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ID",
+        "Name",
+        "Email",
+        "Phone"
+      ]
+    },
+    "Message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "Code",
+    "Data",
+    "Message"
+  ]
+}
