@@ -1,5 +1,5 @@
 @GETproduct
-Feature: GET product
+Feature: GET all product and by ID
   As a user
   I want to see all product and details product
   So that I am success get product
