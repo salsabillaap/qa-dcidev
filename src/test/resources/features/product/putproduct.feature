@@ -7,7 +7,7 @@ Feature: PUT update product for admin
   @TC_11
   Scenario: I want to update product except photo as admin
     Given I'm already logged in as admin
-    And I am set body request name product "Tiktok Premium" detail product "aplikasi joget" price 2001 limit 2
+    And I am set body request name product "Tiktok Premium" detail product "bebas joget" price 2000 limit 2
     When I am hit endpoint put update product by 13
     Then I am get a status code 200 for update product
     And validate response body code 200 message "Success Operation" for put update product
