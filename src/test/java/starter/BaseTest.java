@@ -1,6 +1,7 @@
 package starter;
 
 import starter.Login.Login;
+import starter.Product.DeleteProduct;
 import starter.Product.GetProduct;
 import starter.Product.PostProduct;
 import starter.Product.PutProduct;
@@ -12,4 +13,5 @@ public class BaseTest {
     public PostProduct postproducts = new PostProduct();
     public GetProduct getproduct = new GetProduct();
     public PutProduct putproduct = new PutProduct();
+    public DeleteProduct deleteproduct = new DeleteProduct();
 }

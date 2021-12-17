@@ -8,4 +8,5 @@ public class BaseEndpoint {
     public String GetAllProduct = BASEURL+"/products";
     public String GetProductID = BASEURL+"/products/";
     public String PutProduct = BASEURL+"/jwt/products/";
+    public String DeleteProduct = BASEURL+"/jwt/products/";
 }
