@@ -39,10 +39,17 @@ Feature: GET users
     Then I am get a status code 400 for get users by id
     And validate response body code 400 message "Invalid Id" for get users by id
 
-  #GET Users by ID as Customer as admin
+  #GET Users by ID as Customer
   Scenario: I want to get users by ID as customer
     Given I am success login as customer
     When I am hit endpoint get user by id 6
+    Then I am get a status code 400 for get users by id
+    And validate response body code 400 message "Access Forbidden" for get users by id
+
+  #GET Users by ID NOT EXIST as admin
+  Scenario: I want to get users by ID not exist as customer
+    Given I am success login as customer
+    When I am hit endpoint get user by id 12
     Then I am get a status code 400 for get users by id
     And validate response body code 400 message "Access Forbidden" for get users by id
 
@@ -50,12 +57,5 @@ Feature: GET users
   Scenario: I want to get users by Invalid ID as customer
     Given I am success login as customer
     When I am hit endpoint get user by id "lima"
-    Then I am get a status code 400 for get users by id
-    And validate response body code 400 message "Access Forbidden" for get users by id
-
-  #GET Users by ID Not Exist as Customer
-  Scenario: I want to get users by ID not exist as customer
-    Given I am success login as customer
-    When I am hit endpoint get user by id 12
     Then I am get a status code 400 for get users by id
     And validate response body code 400 message "Access Forbidden" for get users by id
