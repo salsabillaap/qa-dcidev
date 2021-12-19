@@ -1,3 +1,4 @@
+@DeleteUsers
 Feature: Delete Users
   As a user admin
   i want to delete user account by id
