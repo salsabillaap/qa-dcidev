@@ -81,7 +81,7 @@ public class PutProduct{
                 .then()
                 .statusCode(statuscode);
     }
-    //validate jsonschema
+    //validate jsonschema success
     public void JsonschemaEndpointPutProductSuccess(int code, String message){
         SerenityRest
                 .then()
@@ -89,7 +89,7 @@ public class PutProduct{
                 .body("Code",equalTo(code))
                 .body("Message",equalTo(message));
     }
-    //validate jsonschema
+    //validate jsonschema failed
     public void JsonschemaEndpointPutProductFailed(int code, String message){
         SerenityRest
                 .then()
