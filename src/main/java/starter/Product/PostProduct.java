@@ -90,7 +90,7 @@ public class PostProduct {
                 .multiPart("photo",new File(photo));
     }
 
-    //valid request create product failed extension
+    //valid request create product failed format photo
     public void RequestPayloadFailedUpload(String name_product,String detail_product,int price,int limit,String photo){
         SerenityRest
                 .given()
