@@ -136,8 +136,8 @@ Feature: PUT Users
       | name   | email            | password | phone           |
       | sadeli | sadeli@gmail.com | user123  | +62957084366744 |
 
-  @testdoang #customer ingin ubah data user id lain
-  Scenario Outline: I want to update update customer data code with input other customer token
+   #customer ingin ubah data user id lain
+  Scenario Outline: I want to update customer data by id as customer
     Given login as customer
     And I am update data "<name>" "<email>" "<password>" "<phone>"
     When I am hit endpoint put users by id 10
@@ -146,3 +146,14 @@ Feature: PUT Users
     Examples:
       | name   | email            | password | phone           |
       | sadeli | sadeli@gmail.com | user123  | +62957084366744 |
+
+  #customer ingin ubah data user id miliknya
+  Scenario Outline: I want to update password by my id as customer
+    Given login as customer
+    And I am update data "<name>" "<email>" "<password>" "<phone>"
+    When I am hit endpoint put users by id 5
+    Then I am get a status code 200 for update users
+    And validate response body code 200 message "Success Operation" for update users
+    Examples:
+      | name | email            | password | phone           |
+      | user | user@example.com | user123  | +62957084366123 |
