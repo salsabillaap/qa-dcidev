@@ -3,6 +3,9 @@ package starter;
 import starter.GroupProduct.GetGroupProduct;
 import starter.GroupProduct.PostGroupProduct;
 import starter.Login.Login;
+import starter.Orders.GetOrders;
+import starter.Orders.PostOrders;
+import starter.Orders.PutOrders;
 import starter.Product.DeleteProduct;
 import starter.Product.GetProduct;
 import starter.Product.PostProduct;
@@ -24,5 +27,8 @@ public class BaseTest {
     public PutUsers putusers = new PutUsers();
     public PostGroupProduct postgroupproduct = new PostGroupProduct();
     public GetGroupProduct getgroupproduct = new GetGroupProduct();
+    public PostOrders postorders = new PostOrders();
+    public GetOrders getorders = new GetOrders();
+    public PutOrders putorders = new PutOrders();
 }
 //comment
