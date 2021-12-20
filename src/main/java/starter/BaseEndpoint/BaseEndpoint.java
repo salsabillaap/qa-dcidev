@@ -14,8 +14,4 @@ public class BaseEndpoint {
     public String DeleteUser = BASEURL+"/jwt/users/";
     public String PutUsers = BASEURL+"/jwt/users/";
     public String PostGroupProduct = BASEURL+"/jwt/products/group/";
-    public String GetGroupAllProduct = BASEURL+"/products/group";
-    public String GetGroupAllProductIDGroup = BASEURL+"/products/group/";
-    public String GetGroupAllProductIDProduct = BASEURL+"/products/group/products/";
-    public String GetGroupProductStatus = BASEURL+"/products/group/status/";
 }

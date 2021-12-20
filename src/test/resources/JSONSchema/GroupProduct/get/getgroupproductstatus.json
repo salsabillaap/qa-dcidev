@@ -1,0 +1,185 @@
+{
+  "Code": 200,
+  "Data": [
+    {
+      "ID": 1,
+      "ProductsID": 1,
+      "NameGroupProduct": "Netflix-1",
+      "Limit": 9,
+      "CapacityGroupProduct": 4,
+      "Price": 999999,
+      "AdminFee": 5000,
+      "TotalPrice": 5016,
+      "DurationGroup": "01-01-2022",
+      "Name_Product": "Netflix",
+      "Status": "Available",
+      "Url": "https://storage.googleapis.com/barengin-bucket/Netflix-2021-12-18T02:38:51.jpg",
+      "GetOrder": [
+        {
+          "OrderID": 1,
+          "UsersID": 150,
+          "GroupProductID": 1,
+          "Name": "perospero"
+        },
+        {
+          "OrderID": 2,
+          "UsersID": 162,
+          "GroupProductID": 1,
+          "Name": "Om__Nuril"
+        },
+        {
+          "OrderID": 3,
+          "UsersID": 159,
+          "GroupProductID": 1,
+          "Name": "SahrilMahendra"
+        },
+        {
+          "OrderID": 6,
+          "UsersID": 20,
+          "GroupProductID": 1,
+          "Name": "kiki"
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "ProductsID": 1,
+      "NameGroupProduct": "Netflix-2",
+      "Limit": 9,
+      "CapacityGroupProduct": 2,
+      "Price": 999999,
+      "AdminFee": 5000,
+      "TotalPrice": 1004999,
+      "DurationGroup": "02-01-2022",
+      "Name_Product": "Netflix",
+      "Status": "Available",
+      "Url": "https://storage.googleapis.com/barengin-bucket/Netflix-2021-12-18T02:38:51.jpg",
+      "GetOrder": [
+        {
+          "OrderID": 4,
+          "UsersID": 150,
+          "GroupProductID": 2,
+          "Name": "perospero"
+        },
+        {
+          "OrderID": 7,
+          "UsersID": 20,
+          "GroupProductID": 2,
+          "Name": "kiki"
+        }
+      ]
+    },
+    {
+      "ID": 3,
+      "ProductsID": 1,
+      "NameGroupProduct": "Netflix-3",
+      "Limit": 9,
+      "CapacityGroupProduct": 1,
+      "Price": 999999,
+      "AdminFee": 5000,
+      "TotalPrice": 1004999,
+      "DurationGroup": "02-01-2022",
+      "Name_Product": "Netflix",
+      "Status": "Available",
+      "Url": "https://storage.googleapis.com/barengin-bucket/Netflix-2021-12-18T02:38:51.jpg",
+      "GetOrder": [
+        {
+          "OrderID": 8,
+          "UsersID": 20,
+          "GroupProductID": 3,
+          "Name": "kiki"
+        }
+      ]
+    },
+    {
+      "ID": 4,
+      "ProductsID": 1,
+      "NameGroupProduct": "Netflix-4",
+      "Limit": 9,
+      "CapacityGroupProduct": 1,
+      "Price": 999999,
+      "AdminFee": 5000,
+      "TotalPrice": 1004999,
+      "DurationGroup": "02-01-2022",
+      "Name_Product": "Netflix",
+      "Status": "Available",
+      "Url": "https://storage.googleapis.com/barengin-bucket/Netflix-2021-12-18T02:38:51.jpg",
+      "GetOrder": [
+        {
+          "OrderID": 5,
+          "UsersID": 20,
+          "GroupProductID": 4,
+          "Name": "kiki"
+        }
+      ]
+    },
+    {
+      "ID": 5,
+      "ProductsID": 1,
+      "NameGroupProduct": "Netflix-5",
+      "Limit": 9,
+      "CapacityGroupProduct": 0,
+      "Price": 999999,
+      "AdminFee": 5000,
+      "TotalPrice": 1004999,
+      "DurationGroup": "02-01-2022",
+      "Name_Product": "Netflix",
+      "Status": "Available",
+      "Url": "https://storage.googleapis.com/barengin-bucket/Netflix-2021-12-18T02:38:51.jpg",
+      "GetOrder": null
+    },
+    {
+      "ID": 6,
+      "ProductsID": 1,
+      "NameGroupProduct": "Netflix-6",
+      "Limit": 9,
+      "CapacityGroupProduct": 0,
+      "Price": 999999,
+      "AdminFee": 5000,
+      "TotalPrice": 1004999,
+      "DurationGroup": "02-01-2022",
+      "Name_Product": "Netflix",
+      "Status": "Available",
+      "Url": "https://storage.googleapis.com/barengin-bucket/Netflix-2021-12-18T02:38:51.jpg",
+      "GetOrder": null
+    },
+    {
+      "ID": 7,
+      "ProductsID": 1,
+      "NameGroupProduct": "Netflix-7",
+      "Limit": 9,
+      "CapacityGroupProduct": 0,
+      "Price": 999999,
+      "AdminFee": 5000,
+      "TotalPrice": 1004999,
+      "DurationGroup": "02-01-2022",
+      "Name_Product": "Netflix",
+      "Status": "Available",
+      "Url": "https://storage.googleapis.com/barengin-bucket/Netflix-2021-12-18T02:38:51.jpg",
+      "GetOrder": null
+    },
+    {
+      "ID": 8,
+      "ProductsID": 2,
+      "NameGroupProduct": "Spotify-8",
+      "Limit": 6,
+      "CapacityGroupProduct": 1,
+      "Price": 79000,
+      "AdminFee": 5000,
+      "TotalPrice": 18166,
+      "DurationGroup": "03-01-2022",
+      "Name_Product": "Spotify",
+      "Status": "Available",
+      "Url": "https://storage.googleapis.com/barengin-bucket/Spotify-2021-12-19T05:52:35.png",
+      "GetOrder": [
+        {
+          "OrderID": 9,
+          "UsersID": 150,
+          "GroupProductID": 8,
+          "Name": "perospero"
+        }
+      ]
+    }
+  ],
+  "Message": "Success Operation"
+}
