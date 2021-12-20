@@ -7,11 +7,6 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 import static org.hamcrest.Matchers.equalTo;
 
 public class GetGroupProduct {
-
-
-    //coba comment
-
-
     BaseEndpoint endpoint = new BaseEndpoint();
 
     //set header
@@ -27,7 +22,6 @@ public class GetGroupProduct {
                 .when()
                 .get(endpoint.GetGroupAllProduct);
     }
-
 
     //hit GET by ID Group success
     public void hitEndpointGetIDGroup(int id){

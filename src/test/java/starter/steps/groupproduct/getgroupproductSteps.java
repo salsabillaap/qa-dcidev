@@ -7,8 +7,6 @@ import io.cucumber.java.en.When;
 import starter.BaseTest;
 
 
-//coba commnet
-
 public class getgroupproductSteps extends BaseTest {
 
     //All Group Product
@@ -32,22 +30,21 @@ public class getgroupproductSteps extends BaseTest {
         getgroupproduct.JsonschemaGetAllGroupProduct(code, message);
     }
 
-
-//******//
-
-
     //By Id Group
     @When("I am hit endpoint get group product by id {int}")
-    public void iAmHitEndpointGetGroupProductById(int id) {getgroupproduct.hitEndpointGetIDGroup(id);
+    public void iAmHitEndpointGetGroupProductById(int id) {
+        getgroupproduct.hitEndpointGetIDGroup(id);
     }
 
     //By Id Group Invalid Id
     @When("I am hit endpoint get group product by id {string}")
-    public void iAmHitEndpointGetGroupProductById(String invalidID) {getgroupproduct.hitEndpointGetIDGroupInvalidID(invalidID);
+    public void iAmHitEndpointGetGroupProductById(String invalidID) {
+        getgroupproduct.hitEndpointGetIDGroupInvalidID(invalidID);
     }
 
     @Then("I am get status code {int} for get group product by id")
-    public void iAmGetStatusCodeForGetGroupProductById(int statuscode) {getgroupproduct.validateEndpointGET(statuscode);
+    public void iAmGetStatusCodeForGetGroupProductById(int statuscode) {
+        getgroupproduct.validateEndpointGET(statuscode);
     }
 
     @And("validate response body code {int} message {string} for all group product {int}")
@@ -98,17 +95,19 @@ public class getgroupproductSteps extends BaseTest {
 
     //get status
     @When("I am hit endpoint get status product {string}")
-    public void iAmHitEndpointGetStatusProduct(String Available) {getgroupproduct.hitEndpointGetAStatus(Available);
+    public void iAmHitEndpointGetStatusProduct(String Available) {
+        getgroupproduct.hitEndpointGetAStatus(Available);
     }
 
     @Then("I am get status code {int} for get status product")
-    public void iAmGetStatusCodeForGetStatusProduct(int statuscode) {getgroupproduct.validateEndpointGET(statuscode);
+    public void iAmGetStatusCodeForGetStatusProduct(int statuscode) {
+        getgroupproduct.validateEndpointGET(statuscode);
     }
 
     @And("validate response body code {int} message {string} for get status product")
-    public void validateResponseBodyCodeMessageSuccessOperationForGetStatusProduct(int code, String message) {getgroupproduct.JsonschemaGetStatusProduct(code, message);
+    public void validateResponseBodyCodeMessageSuccessOperationForGetStatusProduct(int code, String message) {
+        getgroupproduct.JsonschemaGetStatusProduct(code, message);
     }
-
 
 
 }
