@@ -1,6 +1,5 @@
 package starter;
 
-import starter.GroupProduct.PostGroupProduct;
 import starter.Login.Login;
 import starter.Product.DeleteProduct;
 import starter.Product.GetProduct;
@@ -9,7 +8,6 @@ import starter.Product.PutProduct;
 import starter.Signup.Signup;
 import starter.Users.DeleteUsers;
 import starter.Users.GetUsers;
-import starter.Users.PutUsers;
 
 public class BaseTest {
     public Login login = new Login();
@@ -20,6 +18,4 @@ public class BaseTest {
     public DeleteProduct deleteproduct = new DeleteProduct();
     public GetUsers getusers = new GetUsers();
     public DeleteUsers deleteUser = new DeleteUsers();
-    public PutUsers putusers = new PutUsers();
-    public PostGroupProduct postgroupproduct = new PostGroupProduct();
 }
