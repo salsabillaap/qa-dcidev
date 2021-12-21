@@ -26,7 +26,7 @@ Feature: GET Group Product and by ID
     Then I am get status code 400 for get group product by id
     And validate response body failed code 400 message 'Invalid Id' for all group product by id
 
-  #SUCCESS #error
+  #SUCCESS #error validation jsonschema
   Scenario: I wont to see detail group product by id product
     Given I am set header 'Content-Type' value 'application/json'
     When I am hit endpoint get all group product by id 1

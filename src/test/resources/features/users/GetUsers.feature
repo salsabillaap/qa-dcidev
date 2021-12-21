@@ -46,7 +46,7 @@ Feature: GET users
     Then I am get a status code 400 for get users by id
     And validate response body code 400 message "Access Forbidden" for get users by id
 
-  #GET Users by ID NOT EXIST as admin
+  #GET Users by ID NOT EXIST as customer
   Scenario: I want to get users by ID not exist as customer
     Given I am success login as customer
     When I am hit endpoint get user by id 12

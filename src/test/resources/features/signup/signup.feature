@@ -4,7 +4,7 @@ Feature: Signup Functionality
   I want to be able to register
   so that i success register
 
-  @TC_1
+  @TC_1 #SUCCESS
   Scenario Outline: Check response and status code with valid body request
     Given I am set body request for signup name "<name>" email "<email>" password "<password>" phone "<phone>"
     And I am set valid header for signup "Content-Type" with fill "application/json"
@@ -12,8 +12,8 @@ Feature: Signup Functionality
     Then I am get a status code 200 signup
     And validate response success signup
     Examples:
-      | name      | email               | password  | phone         |
-      | testing11 | testing11@gmail.com | testing11 | +628517846946 |
+      | name      | email               | password     | phone          |
+      | nusantara | nusantara@gmail.com | nusantara123 | +6285155009876 |
 
   @TC_2
   Scenario Outline: Check response and status code with exist email body request
@@ -147,10 +147,5 @@ Feature: Signup Functionality
       | name      | email               | password  | phone         |
       | testing12 | testing12@gmail.com | testing12 | +627853926537 |
 
-  #testing4 testing4@gmail.com testing4 +6285123232323 registered
-  #testing1 testing1@gmail.com testing1 +6285123450213 registered
-  #testing1 testing5@email.com testing5 +6285198786589 registered
-  #testing11 testing11@gmail.com testing11  +628517846946 registered
-  #testing14 testing14@gmail.com testing14 +628515439487413 registered
-  #testing15 testing15@gmail.com testing15 +628515346597 registered
-  #$%@#76 testing17@gmail.com testing15 +628515347654 registered
+  # wahyu wahyu@gmail.com wahyu123 +6285155001234 registered
+  # nusantara nusantara@gmail.com nusantara123 +6285155009876 registered

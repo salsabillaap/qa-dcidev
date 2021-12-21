@@ -33,8 +33,8 @@ public class PostGroupProduct {
     //LOGIN SEBAGAI CUSTOMER
     public void HitEndpointLoginCustomer(){
         requestpayload = new JSONObject();
-        requestpayload.put("Email","user@example.com");
-        requestpayload.put("Password","user123");
+        requestpayload.put("Email","wahyu@gmail.com");
+        requestpayload.put("Password","wahyu123");
 
         SerenityRest
                 .given()
