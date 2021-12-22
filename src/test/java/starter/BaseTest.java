@@ -1,5 +1,6 @@
 package starter;
 
+import starter.GroupProduct.DeleteGroupProduct;
 import starter.GroupProduct.GetGroupProduct;
 import starter.GroupProduct.PostGroupProduct;
 import starter.Login.Login;
@@ -30,5 +31,6 @@ public class BaseTest {
     public PostOrders postorders = new PostOrders();
     public GetOrders getorders = new GetOrders();
     public PutOrders putorders = new PutOrders();
+    public DeleteGroupProduct deletegroupproduct = new DeleteGroupProduct();
 }
 //comment
