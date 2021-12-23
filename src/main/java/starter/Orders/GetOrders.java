@@ -87,13 +87,13 @@ public class GetOrders {
     }
 
     //hit endpoint get all order by id group
-    public void HitEndpointGetAllOrderByInvalidIDGroup(String InvalidID){
+    public void HitEndpointGetAllOrderByInvalidIDGroup(String InvalidId){
         SerenityRest
                 .given()
                 .header("Content-Type","application/json")
                 .header("Authorization","Bearer "+token)
                 .when()
-                .get(endpoint.GetAllOrdersByIDGroup+InvalidID);
+                .get(endpoint.GetAllOrdersByIDGroup+InvalidId);
 
     }
 
@@ -104,7 +104,7 @@ public class GetOrders {
                 .header("Content-Type","application/json")
                 .header("Authorization","Bearer "+token)
                 .when()
-                .get(endpoint.GetOrderByIDOrders+id);
+                .get(endpoint.GetAllOrdersByIDUsers+id);
 
     }
 
@@ -119,11 +119,6 @@ public class GetOrders {
 
     }
 
-
-//********////
-
-
-
     //validate status code endpoint
     public void validateStatusCodeEndpoint(int statuscode){
         SerenityRest
@@ -137,7 +132,6 @@ public class GetOrders {
                 .then()
                 .body(matchesJsonSchemaInClasspath("JSONSchema/order/get/getorderbyidorder.json"))
                 .body("Code",equalTo(code))
-                .body("Data.OrderID",equalTo(idorder))
                 .body("Message",equalTo(message));
     }
 
@@ -145,19 +139,18 @@ public class GetOrders {
     public void jsonschemaEndpointGetOrderByIdOrderFailed(int code, String message){
         SerenityRest
                 .then()
-                .body(matchesJsonSchemaInClasspath("JSONSchema/users/get/getorderbyidorderfailed.json"))
+                .body(matchesJsonSchemaInClasspath("JSONSchema/order/get/getorderbyidorderfailed.json"))
                 .body("Code",equalTo(code))
                 .body("Message",equalTo(message));
     }
 
 
-    //validate jsonschema by id group for admin
-    public void jsonschemaEndpointGetAllOrderByIdGroup(int code, String message, int id){
+    //validate jsonschema by id group
+    public void jsonschemaEndpointGetAllOrderByIdGroup(int code, String message){
         SerenityRest
                 .then()
                 .body(matchesJsonSchemaInClasspath("JSONSchema/order/get/getallorderbyidgroup.json"))
                 .body("Code",equalTo(code))
-                .body("Data.ID",equalTo(id))
                 .body("Message",equalTo(message));
     }
 
@@ -165,19 +158,18 @@ public class GetOrders {
     public void jsonschemaEndpointGetAllOrderByIdGroupFailed(int code, String message){
         SerenityRest
                 .then()
-                .body(matchesJsonSchemaInClasspath("JSONSchema/users/get/getallorderbyidgroupfailed.json"))
+                .body(matchesJsonSchemaInClasspath("JSONSchema/order/get/getallorderbyidgroupfailed.json"))
                 .body("Code",equalTo(code))
                 .body("Message",equalTo(message));
     }
 
 
     //validate jsonschema by id user
-    public void jsonschemaEndpointGetAllOrderByIduser(int code, String message, int id){
+    public void jsonschemaEndpointGetAllOrderByIduser(int code, String message){
         SerenityRest
                 .then()
                 .body(matchesJsonSchemaInClasspath("JSONSchema/order/get/getallorderbyiduser.json"))
                 .body("Code",equalTo(code))
-                .body("Data.ID",equalTo(id))
                 .body("Message",equalTo(message));
     }
 
@@ -185,7 +177,7 @@ public class GetOrders {
     public void jsonschemaEndpointGetAllOrderByIdUserFailed(int code, String message){
         SerenityRest
                 .then()
-                .body(matchesJsonSchemaInClasspath("JSONSchema/users/get/getallorderbyiduserfailed.json"))
+                .body(matchesJsonSchemaInClasspath("JSONSchema/order/get/getallorderbyiduserfailed.json"))
                 .body("Code",equalTo(code))
                 .body("Message",equalTo(message));
     }

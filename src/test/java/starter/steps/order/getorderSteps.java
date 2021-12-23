@@ -40,16 +40,61 @@ public class getorderSteps extends BaseTest {
         getorders.jsonschemaEndpointGetOrderByIdOrder(code,message,idorder);
     }
 
+
+    @And("Validate response body failed code {int} message {string} for get order by id order")
+    public void validateResponseBodyFailedCodeMessageForGetOrderByIdOrder(int code, String message) {
+        getorders.jsonschemaEndpointGetOrderByIdOrderFailed(code,message);
+    }
+
+
     @When("I am hit endpoint get order by id group {int}")
     public void iAmHitEndpointGetOrderByIdGroup(int id) {
+        getorders.HitEndpointGetAllOrderByIDGroup(id);
+    }
 
+    @When("I am hit endpoint get order by id group {string}")
+    public void iAmHitEndpointGetOrderByIdGroup(String InvalidId) {
+        getorders.HitEndpointGetAllOrderByInvalidIDGroup(InvalidId);
     }
 
     @Then("I am get a status code {int} for get oder by id group")
-    public void iAmGetAStatusCodeForGetOderByIdGroup(int arg0) {
+    public void iAmGetAStatusCodeForGetOderByIdGroup(int statuscode) {
+        getorders.validateStatusCodeEndpoint(statuscode);
     }
 
     @And("Validate response body code {int} message {string} for get order by id group")
-    public void validateResponseBodyCodeMessageForGetOrderByIdGroup(int arg0, String arg1) {
+    public void validateResponseBodyCodeMessageForGetOrderByIdGroup(int code, String message) {
+        getorders.jsonschemaEndpointGetAllOrderByIdGroup(code,message);
+    }
+
+    @And("Validate response body failed code {int} message {string} for get order by id group")
+    public void validateResponseBodyFailedCodeMessageForGetOrderByIdGroup(int code, String message) {
+        getorders.jsonschemaEndpointGetAllOrderByIdGroupFailed(code,message);
+    }
+
+
+    @When("I am hit endpoint get order by id user {int}")
+    public void iAmHitEndpointGetOrderByIdUser(int id) {
+        getorders.HitEndpointGetAllOrderByIDUser(id);
+    }
+
+    @Then("I am get a status code {int} for get oder by id user")
+    public void iAmGetAStatusCodeForGetOderByIdUser(int statuscode) {
+        getorders.validateStatusCodeEndpoint(statuscode);
+    }
+
+    @And("Validate response body code {int} message {string} for get order by id user")
+    public void validateResponseBodyCodeMessageForGetOrderByIdUser(int code, String message) {
+        getorders.jsonschemaEndpointGetAllOrderByIduser(code,message);
+    }
+
+    @And("Validate response body failed code {int} message {string} for get order by id user")
+    public void validateResponseBodyFailedCodeMessageForGetOrderByIdUser(int code, String message) {
+        getorders.jsonschemaEndpointGetAllOrderByIdUserFailed(code, message);
+    }
+
+    @When("I am hit endpoint get order by id user {string}")
+    public void iAmHitEndpointGetOrderByIdUser(String InvalidID) {
+        getorders.HitEndpointGetAllOrderByInvalidIDUser(InvalidID);
     }
 }
