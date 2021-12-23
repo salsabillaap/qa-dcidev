@@ -19,7 +19,7 @@ public class BaseEndpoint {
     public String GetGroupAllProductIDProduct = BASEURL+"/products/group/products/";
     public String GetGroupProductStatus = BASEURL+"/products/group/status/";
     public String PostOrders = BASEURL+"/jwt/orders/"; //post order
-    public String GetOrderByIDOrders = BASEURL+"/jwt/orders//"; //get order by id order
+    public String GetOrderByIDOrders = BASEURL+"/jwt/orders/id/"; //get order by id order
     public String GetAllOrdersByIDGroup = BASEURL+"/jwt/orders/group/"; //get all orders by id group for admin only
     public String GetAllOrdersByIDUsers = BASEURL+"/jwt/orders/users/"; //get all orders by id user
     public String PutOrdersByIDOrders = BASEURL+"/jwt/orders/update/"; //update order by  id order for admin only

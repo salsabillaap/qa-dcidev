@@ -16,8 +16,8 @@ public class GetOrders {
     // hit endpoint untuk login sebagai user
     public void HitEndpointLoginCustomer(){
         requestpayload = new JSONObject();
-        requestpayload.put("Email","andi@gmail.com");
-        requestpayload.put("Password","andi12345");
+        requestpayload.put("Email","wahyu@gmail.com");
+        requestpayload.put("Password","wahyu123");
         SerenityRest
                 .given()
                 .header("Content-Type","application/json")
@@ -32,9 +32,6 @@ public class GetOrders {
                 .extract()
                 .path("Data.Token");
     }
-
-
-
 
     // hit endpoint untuk login sebagai admin
     public void HitEndpointLoginAdmin(){
@@ -78,28 +75,27 @@ public class GetOrders {
 
     }
 
-    //hit endpoint get all order by id group for admin
+    //hit endpoint get all order by id group
     public void HitEndpointGetAllOrderByIDGroup(int id){
         SerenityRest
                 .given()
                 .header("Content-Type","application/json")
                 .header("Authorization","Bearer "+token)
                 .when()
-                .get(endpoint.GetOrderByIDOrders+id);
+                .get(endpoint.GetAllOrdersByIDGroup+id);
 
     }
 
-    //hit endpoint get all order by id group for admin failed
+    //hit endpoint get all order by id group
     public void HitEndpointGetAllOrderByInvalidIDGroup(String InvalidID){
         SerenityRest
                 .given()
                 .header("Content-Type","application/json")
                 .header("Authorization","Bearer "+token)
                 .when()
-                .get(endpoint.GetOrderByIDOrders+InvalidID);
+                .get(endpoint.GetAllOrdersByIDGroup+InvalidID);
 
     }
-
 
     //hit endpoint get all order by id user
     public void HitEndpointGetAllOrderByIDUser(int id){
@@ -136,12 +132,12 @@ public class GetOrders {
     }
 
     //validate jsonschema by id order
-    public void jsonschemaEndpointGetOrderByIdOrder(int code, String message, int id){
+    public void jsonschemaEndpointGetOrderByIdOrder(int code, String message, int idorder){
         SerenityRest
                 .then()
                 .body(matchesJsonSchemaInClasspath("JSONSchema/order/get/getorderbyidorder.json"))
                 .body("Code",equalTo(code))
-                .body("Data.ID",equalTo(id))
+                .body("Data.OrderID",equalTo(idorder))
                 .body("Message",equalTo(message));
     }
 
