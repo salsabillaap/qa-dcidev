@@ -36,38 +36,50 @@ public class PutOrders {
                 .path("Data.Token");
     }
 
+    // hit endpoint untuk login sebagai admin
+    public void HitEndpointLoginCustomer(){
+        requestpayload = new JSONObject();
+        requestpayload.put("Email","wahyu@gmail.com");
+        requestpayload.put("Password","wahyu123");
+        SerenityRest
+                .given()
+                .header("Content-Type","application/json")
+                .body(requestpayload.toString())
+                .when()
+                .post(endpoint.Login)
+                .then()
+                .statusCode(200);
+
+        token = SerenityRest
+                .then()
+                .extract()
+                .path("Data.Token");
+    }
+
 
     //valid request update order
-    public void setRequestPayloadUpdateOrder(String email,String password){
+    public void setRequestPayloadUpdateOrder(String details){
         SerenityRest
                 .given()
                 .header("Content-Type","multipart/form-data")
                 .header("Authorization","Bearer "+token)
-                .multiPart("email",email)
-                .multiPart("password",password);
+                .multiPart("detail",details);
     }
 
 
     //hit endpoint put order by id order
     public void HitEndpointPutOrderByID(int id){
         SerenityRest
-                .given()
-                .header("Content-Type","application/json")
-                .header("Authorization","Bearer "+token)
                 .when()
-                .get(endpoint.PutOrdersByIDOrders+id);
+                .put(endpoint.PutOrdersByIDOrders+id);
 
     }
 
     //hit endpoint put order by id order failed
-    public void HitEndpointPutOrderByIDFailed(String InvalidID){
+    public void HitEndpointPutOrderByIDFailed(String invalidid){
         SerenityRest
-                .given()
-                .header("Content-Type","application/json")
-                .header("Authorization","Bearer "+token)
                 .when()
-                .get(endpoint.PutOrdersByIDOrders+InvalidID);
-
+                .put(endpoint.PutOrdersByIDOrders+invalidid);
     }
 
     //*******
@@ -83,7 +95,7 @@ public class PutOrders {
     public void JsonschemaEndpointPutOrderSuccess(int code, String message){
         SerenityRest
                 .then()
-                .body(matchesJsonSchemaInClasspath("JSONSchema/product/put/putorder.json"))
+                .body(matchesJsonSchemaInClasspath("JSONSchema/order/put/putorder.json"))
                 .body("Code",equalTo(code))
                 .body("Message",equalTo(message));
     }
@@ -91,7 +103,7 @@ public class PutOrders {
     public void JsonschemaEndpointPutOrderFailed(int code, String message){
         SerenityRest
                 .then()
-                .body(matchesJsonSchemaInClasspath("JSONSchema/product/put/putorderfailed.json"))
+                .body(matchesJsonSchemaInClasspath("JSONSchema/order/put/putorderfailed.json"))
                 .body("Code",equalTo(code))
                 .body("Message",equalTo(message));
     }

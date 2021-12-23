@@ -12,5 +12,6 @@
   "required": [
     "Code",
     "Message"
-  ]
+  ],
+  "additionalProperties": false
 }
