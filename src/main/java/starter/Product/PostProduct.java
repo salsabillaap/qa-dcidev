@@ -75,7 +75,7 @@ public class PostProduct {
                 .multiPart("detail_product",detail_product)
                 .multiPart("price",price)
                 .multiPart("limit",limit)
-                .multiPart("photo",new File("E:/Video/github-logo.png"));
+                .multiPart("photo",new File("gambar/b59e15ea0252396a969c40b3ed1863b6.jpg"));
     }
     //valid request create product failed extension
     public void RequestPayloadFailedExtension(String name_product,String detail_product,int price,int limit,String photo){
