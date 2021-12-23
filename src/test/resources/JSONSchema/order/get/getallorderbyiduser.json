@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "Code": {
+      "type": "integer"
+    },
+    "Data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "OrderID": {
+              "type": "integer"
+            },
+            "UsersID": {
+              "type": "integer"
+            },
+            "GroupProductID": {
+              "type": "integer"
+            },
+            "NameProduct": {
+              "type": "string"
+            },
+            "PriceOrder": {
+              "type": "integer"
+            },
+            "DetailCredential": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "OrderID",
+            "UsersID",
+            "GroupProductID",
+            "NameProduct",
+            "PriceOrder",
+            "DetailCredential"
+          ]
+        }
+      ]
+    },
+    "Message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "Code",
+    "Data",
+    "Message"
+  ]
+}
