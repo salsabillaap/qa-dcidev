@@ -46,7 +46,7 @@ Feature: GET order
     Then I am get a status code 400 for get oder by id
     And Validate response body failed code 400 message "Access Forbidden" for get order by id order
 
-
+  ## By Id Group
   #GET order By id group success
   Scenario: I want to get order by id group as admin
     Given I am successfully login as admin
@@ -62,19 +62,20 @@ Feature: GET order
     And Validate response body failed code 400 message "Access Forbidden" for get order by id group
 
   #GET order By id group failed
-  Scenario: I want to get order by id group as admin
+  Scenario: I want to get order by invalid id group as admin
     Given I am successfully login as admin
     When I am hit endpoint get order by id group "lima"
     Then I am get a status code 400 for get oder by id group
     And Validate response body failed code 400 message "Invalid Id" for get order by id group
 
-  #GET order By id group failed
-  Scenario: I want to get order by id group as admin
+  #GET order By id group failed // ini bug
+  Scenario: I want to get order by invalid id group as customer
     Given I am successfully login as customer
     When I am hit endpoint get order by id group "lima"
     Then I am get a status code 400 for get oder by id group
     And Validate response body failed code 400 message "Access Forbidden" for get order by id group
 
+  #By ID User
   #GET order By id user success #wahyu@gmail.com #wahyu123 #user_id 6
   Scenario: I want to get order by id user as customer
     Given I am successfully login as customer
