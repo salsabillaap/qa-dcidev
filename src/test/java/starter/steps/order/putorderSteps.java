@@ -17,9 +17,9 @@ public class putorderSteps extends BaseTest {
         putorders.HitEndpointLoginCustomer();
     }
 
-    @And("I am set body request details {string}")
-    public void iAmSetBodyRequestDetails(String details) {
-        putorders.setRequestPayloadUpdateOrder(details);
+    @And("I am set body request email {string} password {string}")
+    public void iAmSetBodyRequestEmailPassword(String email, String password) {
+        putorders.setRequestPayloadUpdateOrder(email,password);
     }
 
     @When("I am hit endpoint put update order by id {int}")

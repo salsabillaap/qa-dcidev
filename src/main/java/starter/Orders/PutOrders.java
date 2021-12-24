@@ -3,9 +3,6 @@ package starter.Orders;
 import net.serenitybdd.rest.SerenityRest;
 import org.json.simple.JSONObject;
 import starter.BaseEndpoint.BaseEndpoint;
-
-import java.io.File;
-
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -58,12 +55,13 @@ public class PutOrders {
 
 
     //valid request update order
-    public void setRequestPayloadUpdateOrder(String details){
+    public void setRequestPayloadUpdateOrder(String email, String password){
         SerenityRest
                 .given()
                 .header("Content-Type","multipart/form-data")
                 .header("Authorization","Bearer "+token)
-                .multiPart("detail",details);
+                .multiPart("Email",email)
+                .multiPart("Password",password);
     }
 
 
