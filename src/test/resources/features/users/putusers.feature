@@ -111,8 +111,8 @@ Feature: PUT Users
     Then I am get a status code 400 for update users
     And validate response body failed code 400 message "Email or Telephone Number Already Exist" for update users
     Examples:
-      | name  | email                    | password | phone         |
-      | manto | wahyunusantara@gmail.com | manto123 | +629876298628 |
+      | name  | email           | password | phone         |
+      | manto | wahyu@gmail.com | manto123 | +629876298628 |
 
   #FAILED
   Scenario Outline: I want to update customer data code to exist phone number as admin
@@ -123,7 +123,7 @@ Feature: PUT Users
     And validate response body failed code 400 message "Email or Telephone Number Already Exist" for update users
     Examples:
       | name  | email           | password | phone         |
-      | manto | manto@gmail.com | manto123 | +625749372613 |
+      | manto | manto@gmail.com | manto123 | +6285155001234 |
 
   #NEGATIVE SCENARIO jika password sudah digunakan user lain
   Scenario Outline: I want to update customer data code to exist password as admin
@@ -147,13 +147,13 @@ Feature: PUT Users
       | name   | email            | password | phone           |
       | sadeli | sadeli@gmail.com | user123  | +62957084366744 |
 
-  #customer ingin ubah data user id miliknya
+  @test #customer ingin ubah data user id miliknya
   Scenario Outline: I want to update password by my id as customer
     Given login as customer
     And I am update data "<name>" "<email>" "<password>" "<phone>"
-    When I am hit endpoint put users by id 5
+    When I am hit endpoint put users by id 6
     Then I am get a status code 200 for update users
     And validate response body code 200 message "Success Operation" for update users
     Examples:
-      | name | email            | password | phone           |
-      | user | user@example.com | user123  | +62957084366123 |
+      | name  | email           | password | phone           |
+      | wahyu | wahyu@gmail.com | wahyu123 | +6285155001234 |

@@ -28,7 +28,7 @@ Feature: GET users
   #GET Users by ID NOT EXIST as admin
   Scenario: I want to get users by ID not exist as admin
     Given I am success login as admin
-    When I am hit endpoint get user by id 12
+    When I am hit endpoint get user by id 165
     Then I am get a status code 400 for get users by id
     And validate response body code 400 message "Data Not Found" for get users by id
 
@@ -39,10 +39,10 @@ Feature: GET users
     Then I am get a status code 400 for get users by id
     And validate response body code 400 message "Invalid Id" for get users by id
 
-  #GET Users by ID as Customer
+  @test #GET Users by ID as Customer
   Scenario: I want to get users by ID as customer
     Given I am success login as customer
-    When I am hit endpoint get user by id 6
+    When I am hit endpoint get user by id 2
     Then I am get a status code 400 for get users by id
     And validate response body code 400 message "Access Forbidden" for get users by id
 

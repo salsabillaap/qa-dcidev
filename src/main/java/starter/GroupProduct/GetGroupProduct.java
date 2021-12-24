@@ -59,13 +59,6 @@ public class GetGroupProduct {
                 .get(endpoint.GetGroupProductStatus+message);
     }
 
-
-
-
-
-
-
-
     //validasi response code get product
     public void validateEndpointGET(int statuscode) {
         SerenityRest
@@ -103,13 +96,12 @@ public class GetGroupProduct {
     }
 
     //validasi jsonschema success get by id product
-    public void JsonschemaGetByIDProductSuccess(int code, String message, int id){
+    public void JsonschemaGetByIDProductSuccess(int code, String message){
         SerenityRest
                 .then()
                 .body(matchesJsonSchemaInClasspath("JSONSchema/groupproduct/get/getbyidproductsuccess.json"))
                 .body("Code",equalTo(code))
-                .body("Message",equalTo(message))
-                .body("Data.ID",equalTo(id));
+                .body("Message",equalTo(message));
     }
 
     //validasi jsonschema failed get by id product
@@ -120,7 +112,6 @@ public class GetGroupProduct {
                 .body("Code",equalTo(code))
                 .body("Message",equalTo(message));
     }
-
 
     //validasi jsonschema status product
     public void JsonschemaGetStatusProduct(int code, String message){

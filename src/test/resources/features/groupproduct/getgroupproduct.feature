@@ -5,7 +5,7 @@ Feature: GET Group Product and by ID
   I want to see all group product and details group product
   So that I am success get group product
 
-  #SUCCESS
+  @test #SUCCESS
   Scenario: I wont to see all group product
     Given I am set header 'Content-Type' value 'application/json'
     When  I am hit endpoint all group product
@@ -31,7 +31,6 @@ Feature: GET Group Product and by ID
     Given I am set header 'Content-Type' value 'application/json'
     When I am hit endpoint get all group product by id 1
     Then I am get status code 200 for get all group product by id
-    And validate response body code 200 message 'Success Operation' for get all group product 1
 
   #FAILED
   Scenario: I wont to see detail all group product by invalid id product

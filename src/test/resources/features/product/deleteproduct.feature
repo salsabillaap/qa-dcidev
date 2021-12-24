@@ -6,7 +6,7 @@ Feature: Delete Product
 
   Scenario: I want to delete product by id as admin
     Given I am already logged in as admin
-    When I am hit endpoint delete product by id 22
+    When I am hit endpoint delete product by id 10
     Then I am get a status code 200 for delete product
     And validate response body code 200 message "Success Operation" for delete product
 

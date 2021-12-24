@@ -1,11 +1,11 @@
 @Login
-Feature: Login Functionality
+Feature: POST Login get token for access to account
   As a user
   I want to be able to login
   so that i success login
 
-  @LoginSuccess #Success #Test_1
-  Scenario Outline: Check response and status code with valid body request
+  #Success #Test_1
+  Scenario Outline: login with valid email and password
     Given I am set body request email "<email>" and password "<password>"
     And I am set valid header "Content-Type" with fill "application/json"
     When I am hit endpoint login
@@ -16,8 +16,8 @@ Feature: Login Functionality
       | admin@admin.com | admin123 |
       | wahyu@gmail.com | wahyu123 |
 
-  @LoginFailed #Failed #Test_2
-  Scenario Outline: Check response and status code with invalid email body request
+  #Failed #Test_2
+  Scenario Outline: login with invalid email and valid password
     Given I am set body request email "<email>" and password "<password>"
     And I am set valid header "Content-Type" with fill "application/json"
     When I am hit endpoint login
@@ -31,7 +31,7 @@ Feature: Login Functionality
       | @example.com    | user123  |
 
   #Failed #Test_3
-  Scenario Outline: Check response and status code with invalid password body request
+  Scenario Outline: login with valid email and invalid password
     Given I am set body request email "<email>" and password "<password>"
     And I am set valid header "Content-Type" with fill "application/json"
     When I am hit endpoint login
@@ -44,7 +44,7 @@ Feature: Login Functionality
       | user@example.com  | gda      |
 
   #Failed #Test_4
-  Scenario Outline: Check response and status code with invalid email and password body request
+  Scenario Outline: login with invalid email and password
     Given I am set body request email "<email>" and password "<password>"
     And I am set valid header "Content-Type" with fill "application/json"
     When I am hit endpoint login
@@ -57,8 +57,8 @@ Feature: Login Functionality
       | userexamplecom  | gda      |
       | @example.com    | zkzkz    |
 
-  @nyoba #Failed #Test_5
-  Scenario Outline: Check response and status code with valid body request and without header
+  #Failed #Test_5
+  Scenario Outline: login with valid email and password but without header
     Given I am set body request email "<email>" and password "<password>"
     #And I am set valid header "" with fill ""
     When I am hit endpoint login
@@ -70,7 +70,7 @@ Feature: Login Functionality
       | admin@admin.com  | admin123 |
 
   #Failed #Test_6
-  Scenario: Check response and status code without body request
+  Scenario: login with empty email and password
     Given I am set body request email "" and password ""
     And I am set valid header "Content-Type" with fill "application/json"
     When I am hit endpoint login

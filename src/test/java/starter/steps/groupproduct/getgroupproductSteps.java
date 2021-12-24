@@ -27,7 +27,7 @@ public class getgroupproductSteps extends BaseTest {
 
     @And("validate response body code {int} message {string} for all group product")
     public void validateResponseBodyCodeMessageForAllGroupProduct(int code, String message) {
-        getgroupproduct.JsonschemaGetAllGroupProduct(code, message);
+        //getgroupproduct.JsonschemaGetAllGroupProduct(code, message);
     }
 
     //By Id Group
@@ -79,8 +79,8 @@ public class getgroupproductSteps extends BaseTest {
     }
 
     @And("validate response body code {int} message {string} for get all group product {int}")
-    public void validateResponseBodyCodeMessageSuccessOperationForGetAllGroupProduct(int code, String message, int id) {
-        getgroupproduct.JsonschemaGetByIDProductSuccess(code, message, id);
+    public void validateResponseBodyCodeMessageSuccessOperationForGetAllGroupProduct(int code, String message) {
+        getgroupproduct.JsonschemaGetByIDProductSuccess(code, message);
     }
 
     //By id Product Invalid id
@@ -88,10 +88,6 @@ public class getgroupproductSteps extends BaseTest {
     public void validateResponseBodyFailedCodeMessageSuccessOperationForGetAllGroupProductById(int code, String message) {
         getgroupproduct.JsonschemaGetByIDProductFailed(code, message);
     }
-
-
-    ///*****///
-
 
     //get status
     @When("I am hit endpoint get status product {string}")

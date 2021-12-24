@@ -25,15 +25,17 @@ Feature: Create Order
       |phone|
       |082122122121|
 
+  @test
   Scenario Outline: I want to create new order as customer with unexis id group
     Given As a Customer
     And set request body phone "<phone>"
     When I create new order in id_group 1000
     Then I get status code 400 for new order
-    And Validate failed response body new order 400 and message "Id Group Product Not Found" for order
+    And Validate failed response body new order 400 and message "Bad Request" for order
     Examples:
       |phone|
       |082122122121|
+
 
   Scenario Outline: I want to create new order as customer with unavailable slot group product
     Given As a Customer

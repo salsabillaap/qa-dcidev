@@ -4,15 +4,16 @@ Feature: Delete Users
   i want to delete user account by id
   so that i can delete account customer
 
+  @test
   Scenario: I want to delete account by id as admin
     Given I'm login as admin
-    When I delete user customer id 35
+    When I delete user customer id 47
     Then I get status code 200 for delete users
     And Validate response body 200 and message "Success Operation" for delete users
 
   Scenario: I want to delete account by id not exist as admin
     Given I'm login as admin
-    When I delete user customer id 37
+    When I delete user customer id 67
     Then I get status code 400 for delete users
     And Validate failed respon body 400 and message "Data Not Found"
 

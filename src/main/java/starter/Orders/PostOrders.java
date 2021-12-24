@@ -38,8 +38,8 @@ public class PostOrders {
     //hit endpoint untuk login sebagai user customer
     public void HitEndpointLoginCustomer(){
         requestpayload = new JSONObject();
-        requestpayload.put("Email","jajal8@jajal8.com");
-        requestpayload.put("Password","123456");
+        requestpayload.put("Email","wahyu@gmail.com");
+        requestpayload.put("Password","wahyu123");
         SerenityRest
                 .given()
                 .header("Content-Type","application/json")
