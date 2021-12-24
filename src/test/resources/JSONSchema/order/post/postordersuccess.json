@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "Code": {
+      "type": "integer"
+    },
+    "Data": {
+      "type": "object",
+      "properties": {
+        "OrderID": {
+          "type": "integer"
+        },
+        "EwalletType": {
+          "type": "string"
+        },
+        "ExternalId": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "integer"
+        },
+        "BusinessId": {
+          "type": "string"
+        },
+        "Created": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "OrderID",
+        "EwalletType",
+        "ExternalId",
+        "Amount",
+        "BusinessId",
+        "Created"
+      ]
+    },
+    "Message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "Code",
+    "Data",
+    "Message"
+  ],
+  "additionalProperties": false
+}
