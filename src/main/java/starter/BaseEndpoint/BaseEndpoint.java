@@ -24,4 +24,5 @@ public class BaseEndpoint {
     public String GetAllOrdersByIDUsers = BASEURL+"/jwt/orders/users/"; //get all orders by id user
     public String PutOrdersByIDOrders = BASEURL+"/jwt/orders/update/"; //update order by  id order for admin only
     public String DeleteGroupProduct = BASEURL+"/jwt/products/group/delete/"; //delete group product by id group
+    public String DeleteOrderByIDOrder = BASEURL+"/jwt/orders/delete/"; //delete order by  id order for admin only
 }

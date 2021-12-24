@@ -4,6 +4,7 @@ import starter.GroupProduct.DeleteGroupProduct;
 import starter.GroupProduct.GetGroupProduct;
 import starter.GroupProduct.PostGroupProduct;
 import starter.Login.Login;
+import starter.Orders.DeleteOrders;
 import starter.Orders.GetOrders;
 import starter.Orders.PostOrders;
 import starter.Orders.PutOrders;
@@ -32,5 +33,6 @@ public class BaseTest {
     public GetOrders getorders = new GetOrders();
     public PutOrders putorders = new PutOrders();
     public DeleteGroupProduct deletegroupproduct = new DeleteGroupProduct();
+    public DeleteOrders deleteorders = new DeleteOrders();
 }
 //comment
